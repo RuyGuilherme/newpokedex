@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt=BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <title>Home</title>
+</head>
+<body>
+    <header>
+   
+    <div id="cima">
+               
+        
+            
+            <div class="container"  class="animation_in">
+     
+                <h1 id= "cimatitulo">PokeDex</h1>
+                <img src="/img/pokebola.png" alt="Pokebola" class="pokebola">
+                
+            </div>
+            <nav>
+    
+        
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cadastro">Cadastro</a></li>
+                </ul>
+         
+            </nav>
+            <% if(message != "") {  %>
+                <section id="message">
+                    <p><%= message %></p> <span id="close">&times;</span>
+                </section>
+            <% }  %>  
+     
+    </div>
+    <main class="index">
+        <% pokedex.forEach((pokedex, find) => { %>
+        <section class="containerCard" class="animation_in"> 
+          <article class="card_content">
+        <a class= "linken" href="/detalhes/<%= find %>"
+              ><img class="img" src="<%= pokedex.imagem %>"
+            />
+            <h2 class="nomeHome"><%= pokedex.nome %></h2>
+            <h4 class="tipoHome"><%= pokedex.tipo %></h4>
+       </a>
+         
+          </article>
+        </section>
+        <% }) %>
+      </main>
+    
+
+</header>
+  
+<script src="/js/script.js"></script>
+
+</body>
+</html>
